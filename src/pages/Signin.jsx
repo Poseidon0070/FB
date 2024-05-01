@@ -13,7 +13,6 @@ const Signin = () => {
       let formData = new FormData(e.target)
       let payload = Object.fromEntries(formData)
       let result = await firebase.signinUserWithEmailAndPassword(payload.email, payload.password)
-      console.log("=> ", result)
     }
 
     
@@ -37,7 +36,7 @@ const Signin = () => {
                 <Box><Button type="submit" variant='contained' size="large" sx={{marginX:"20px"}}>Signin</Button></Box>
                 <Box><Button onClick={firebase.signinWithGoogle} type="submit" variant='contained' color="error" size="large">Signin with Google</Button></Box>
             </Box>
-            <Box sx={{textAlign:"center"}}><Typography sx={{fontSize:"12px", marginTop:"10px", }}>Account not created? <Link to="/signup">Signup</Link></Typography></Box>
+            <Box sx={{textAlign:"center"}}><Typography sx={{fontSize:"12px", marginTop:"10px", }}>Account not created? <Link to="/signup" style={{color:"black", textDecoration:"underline"}}>Signup</Link></Typography></Box>
             </Box>
         </Box>
       </Form>
